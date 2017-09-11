@@ -93,20 +93,21 @@
 
 
 
-<meta name="description" content="12345678910111213141516171819202122232425262728293031323334353637383940 &amp;lt;style&amp;gt;        .head&amp;#123;            width: 100%;            height: 200px;            border: 1px solid red;         &amp;#1">
+<meta name="description" content="HTML float布局脱离文档流解决方法-11234567891011121314151617181920212223242526272829303132333435363738394041&amp;lt;head&amp;gt; &amp;lt;style&amp;gt;        .head&amp;#123;            width: 100%;            height: 200px;">
 <meta name="keywords" content="HTML">
 <meta property="og:type" content="article">
 <meta property="og:title" content="HTML float布局脱离文档流解决方法-1">
 <meta property="og:url" content="https://LvYaya.github.io/2017/09/10/HTML-float布局脱离文档流解决方法-1/index.html">
 <meta property="og:site_name" content="木棉花">
-<meta property="og:description" content="12345678910111213141516171819202122232425262728293031323334353637383940 &amp;lt;style&amp;gt;        .head&amp;#123;            width: 100%;            height: 200px;            border: 1px solid red;         &amp;#1">
+<meta property="og:description" content="HTML float布局脱离文档流解决方法-11234567891011121314151617181920212223242526272829303132333435363738394041&amp;lt;head&amp;gt; &amp;lt;style&amp;gt;        .head&amp;#123;            width: 100%;            height: 200px;">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://ovjygnl6d.bkt.clouddn.com/yaya1.png">
-<meta property="og:image" content="http://ovjygnl6d.bkt.clouddn.com/yaya2.png">
-<meta property="og:updated_time" content="2017-09-10T14:53:41.379Z">
+<meta property="og:image" content="http://ovjygnl6d.bkt.clouddn.com/yaya2
+.png">
+<meta property="og:updated_time" content="2017-09-11T14:20:46.251Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HTML float布局脱离文档流解决方法-1">
-<meta name="twitter:description" content="12345678910111213141516171819202122232425262728293031323334353637383940 &amp;lt;style&amp;gt;        .head&amp;#123;            width: 100%;            height: 200px;            border: 1px solid red;         &amp;#1">
+<meta name="twitter:description" content="HTML float布局脱离文档流解决方法-11234567891011121314151617181920212223242526272829303132333435363738394041&amp;lt;head&amp;gt; &amp;lt;style&amp;gt;        .head&amp;#123;            width: 100%;            height: 200px;">
 <meta name="twitter:image" content="http://ovjygnl6d.bkt.clouddn.com/yaya1.png">
 
 
@@ -117,7 +118,7 @@
     root: '/',
     scheme: 'Mist',
     version: '5.1.2',
-    sidebar: {"position":"right","display":"remove","offset":12,"offset_float":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    sidebar: {"position":"right","display":"post","offset":12,"offset_float":12,"b2t":true,"scrollpercent":true,"onmobile":false},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
@@ -255,7 +256,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="LvYaya">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://ovjygnl6d.bkt.clouddn.com/yayatx.jpg">
+      <meta itemprop="image" content="http://ow4c3vrv0.bkt.clouddn.com/photo.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -317,8 +318,9 @@
       
 
       
-        <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line"> <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="undefined">        .head&#123;</span></div><div class="line"><span class="undefined">            width: 100%;</span></div><div class="line"><span class="undefined">            height: 200px;</span></div><div class="line"><span class="undefined">            border: 1px solid red; </span></div><div class="line"><span class="undefined">        &#125;</span></div><div class="line"><span class="undefined">        .first&#123;</span></div><div class="line"><span class="undefined">            width:48%;</span></div><div class="line"><span class="undefined">            height: 210px;</span></div><div class="line"><span class="undefined">            border: 1px solid red; </span></div><div class="line"><span class="undefined">            float: left;</span></div><div class="line"><span class="undefined">        &#125;</span></div><div class="line"><span class="undefined">        .second&#123;</span></div><div class="line"><span class="undefined">            width: 48%;</span></div><div class="line"><span class="undefined">            height: 210px;</span></div><div class="line"><span class="undefined">            border: 1px solid red; </span></div><div class="line"><span class="undefined">            float: left;</span></div><div class="line"><span class="undefined">        &#125;</span></div><div class="line"><span class="undefined">        .main&#123;</span></div><div class="line"><span class="undefined">            border: 1px solid yellow; </span></div><div class="line"><span class="undefined">        &#125;</span></div><div class="line"><span class="undefined">        .end&#123;</span></div><div class="line"><span class="undefined">            width: 100%;</span></div><div class="line"><span class="undefined">            height: 200px;</span></div><div class="line"><span class="undefined">            border: 2px solid black; </span></div><div class="line"><span class="undefined">        &#125;</span></div><div class="line"><span class="undefined"></span></div><div class="line"><span class="undefined"></span></div><div class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"head"</span>&gt;</span>1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"main"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"first"</span>&gt;</span>2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"second"</span>&gt;</span>3<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"end"</span>&gt;</span>4<span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>后面的div会和前面的div重叠，如图一所示：<br><img src="http://ovjygnl6d.bkt.clouddn.com/yaya1.png" alt="Alt text"><br>可以在.end里面添加“clrear:both”,后面的div和前面的div就不会重叠了。如图二所示：<br><img src="http://ovjygnl6d.bkt.clouddn.com/yaya2.png" alt="Alt text"></p>
+        <p>HTML float布局脱离文档流解决方法-1<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line"> <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="undefined">        .head&#123;</span></div><div class="line"><span class="undefined">            width: 100%;</span></div><div class="line"><span class="undefined">            height: 200px;</span></div><div class="line"><span class="undefined">            border: 1px solid red; </span></div><div class="line"><span class="undefined">        &#125;</span></div><div class="line"><span class="undefined">        .first&#123;</span></div><div class="line"><span class="undefined">            width:48%;</span></div><div class="line"><span class="undefined">            height: 210px;</span></div><div class="line"><span class="undefined">            border: 1px solid red; </span></div><div class="line"><span class="undefined">            float: left;</span></div><div class="line"><span class="undefined">        &#125;</span></div><div class="line"><span class="undefined">        .second&#123;</span></div><div class="line"><span class="undefined">            width: 48%;</span></div><div class="line"><span class="undefined">            height: 210px;</span></div><div class="line"><span class="undefined">            border: 1px solid red; </span></div><div class="line"><span class="undefined">            float: left;</span></div><div class="line"><span class="undefined">        &#125;</span></div><div class="line"><span class="undefined">        .main&#123;</span></div><div class="line"><span class="undefined">            border: 1px solid yellow; </span></div><div class="line"><span class="undefined">        &#125;</span></div><div class="line"><span class="undefined">        .end&#123;</span></div><div class="line"><span class="undefined">            width: 100%;</span></div><div class="line"><span class="undefined">            height: 200px;</span></div><div class="line"><span class="undefined">            border: 2px solid black; </span></div><div class="line"><span class="undefined">        &#125;</span></div><div class="line"><span class="undefined"></span></div><div class="line"><span class="undefined"></span></div><div class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"head"</span>&gt;</span>1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"main"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"first"</span>&gt;</span>2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"second"</span>&gt;</span>3<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"end"</span>&gt;</span>4<span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>后面的div会和前面的div重叠，如图一所示：<br><img src="http://ovjygnl6d.bkt.clouddn.com/yaya1.png" alt="Alt text"><br>可以在.end里面添加“clrear:both”,后面的div和前面的div就不会重叠了。如图二所示：<br><img src="http://ovjygnl6d.bkt.clouddn.com/yaya2
+.png" alt="Alt text"></p>
 
       
     </div>
@@ -345,22 +347,6 @@
       
       
 
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2017/09/08/test/" rel="next" title="test">
-                <i class="fa fa-chevron-left"></i> test
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-          </div>
-        </div>
       
 
       
@@ -391,6 +377,108 @@
 
 
         </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://ow4c3vrv0.bkt.clouddn.com/photo.jpg"
+               alt="LvYaya" />
+          <p class="site-author-name" itemprop="name">LvYaya</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives">
+            
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/LvYaya" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
         
       </div>
     </main>

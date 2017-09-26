@@ -101,7 +101,7 @@
 <meta property="og:site_name" content="木棉花">
 <meta property="og:description" content="页面的性能指标详解 1.白屏时间（first Paint Time）-用户从打开页面到页面开始有东西呈现； 2.首屏时间-用户浏览器首屏内所有内容都呈现出来所花费的时间； 3.用户可操作时间（dom interactive）-用户可以进行正常的点击，输入等操作，默认可以统计domready时间，因为通常会在这个时候绑定事件操作； 4.总下载时间-页面所有资源都加载完成并呈现出来所花的时间，即页面o">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-23T13:35:21.649Z">
+<meta property="og:updated_time" content="2017-09-26T03:13:08.785Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="my question-js">
 <meta name="twitter:description" content="页面的性能指标详解 1.白屏时间（first Paint Time）-用户从打开页面到页面开始有东西呈现； 2.首屏时间-用户浏览器首屏内所有内容都呈现出来所花费的时间； 3.用户可操作时间（dom interactive）-用户可以进行正常的点击，输入等操作，默认可以统计domready时间，因为通常会在这个时候绑定事件操作； 4.总下载时间-页面所有资源都加载完成并呈现出来所花的时间，即页面o">
@@ -368,7 +368,91 @@
 <p>4、构造HTML DOM模型。</p>
 <p>5、加载图片等外部文件。</p>
 <p>6、页面加载完毕。</p>
-</iframe></frameset></body></p>
+<h1 id="js-隐式转换"><a href="#js-隐式转换" class="headerlink" title="js 隐式转换"></a>js 隐式转换</h1><p>JS在做==运算时会将操作数转换为Number类型之后再操作，而’ ‘，false，0，[]都能转换为为数字类型0，而{}却转换不了，转换后为NaN,而NaN做任何运算返回都是false</p>
+<h1 id="函数声明提前"><a href="#函数声明提前" class="headerlink" title="函数声明提前"></a>函数声明提前</h1><pre><code> var a = 0;
+function b(c) {
+ console.log(a);
+ var a = 1;
+ arguments[0] = 2;
+ console.log(c);
+ console.log(a);
+}
+b(3);
+console.log(a);
+</code></pre><p>undefined,2,1,0</p>
+<p>源代码相当于</p>
+<pre><code>var a = 0;
+function b(c) {
+ var a;          //声明提前
+ console.log(a);
+ a = 1;
+ c = 2;       //非严格模式，arguments追踪参数变化
+ console.log(c);
+ console.log(a);
+}
+b(3);
+console.log(a);
+</code></pre><h1 id="this指向"><a href="#this指向" class="headerlink" title="this指向"></a>this指向</h1><pre><code>var a = 0;
+var obj = {
+ a:&apos;obj&apos;,
+ b:function(a){
+ setTimeout(function(){
+ console.log(this.a);
+ },1000)
+ }
+}
+obj.b(1); 
+
+结果为0；setTimeout中所执行函数中的this，永远指向window！！注意是要延迟执行的函数中的this哦！！
+</code></pre><h1 id="number"><a href="#number" class="headerlink" title="number"></a>number</h1><pre><code>&quot;a&quot;-1结果为NaN，但是typeof NaN === ‘number’
+1/0结果为Infinity，但是typeof Infinity === ‘number’
+0 &amp;&amp; “a” 结果为1，是number类型 为什么为1啊啊？？？
+new Number(1) 产生的是对象类型数据
+</code></pre><h1 id="map"><a href="#map" class="headerlink" title="map"></a>map</h1><p>[“1”, “2”, “3”].map(parseInt)的执行结果是？[1, NaN, NaN]<br>map有三个参数val, index, arr<br>parseInt 要两个参数，所以执行的是parseInt(val, index)</p>
+<pre><code>function returnInt(element){
+
+ return parseInt(element,10);
+
+}
+
+[&quot;1&quot;, &quot;2&quot;, &quot;3&quot;].map(returnInt);
+
+// 返回[1,2,3]
+
+parseInt(&quot;1&quot;, 0);
+parseInt(&quot;2&quot;, 1);
+parseInt(&quot;3&quot;, 2);
+
+parseInt(string, radix); // 把左边的按照radix进制, 转成数
+var new_array = arr.map(parseInt); // 根据map函数的用法等价与下面这样
+parseInt(currentValue, index, array); // 对应于原题相当于这样
+parseInt(&quot;1&quot;, 0, [&quot;1&quot;, &quot;2&quot;, &quot;3&quot;]);
+parseInt(&quot;2&quot;, 1, [&quot;1&quot;, &quot;2&quot;, &quot;3&quot;]);
+parseInt(&quot;3&quot;, 2, [&quot;1&quot;, &quot;2&quot;, &quot;3&quot;]);
+// 而我们根据parseInt函数的语法, 得知最后一个参数将直接被忽略
+// 于是原题, 相当于这样
+parseInt(&quot;1&quot;, 0); // 这是特例, 按照 0 进制转成数, 直接得本身
+parseInt(&quot;2&quot;, 1); // 直接NaN, 因为计数的进制至少也是 2 进制
+parseInt(&quot;3&quot;, 2); // 也是NaN, 右边参数是2, 大家千万不要理解成
+// 把10进制的3转成2进制是多少? No, 大错特错.
+
+// 正确的理解是, 右边参数是2, 函数会认为左边的字符串参数是由0, 1
+// 等组成的2进制数, 结果发现出现了3, 无法转换, 结果就是NaN
+// 像这样才能正常输出console.log(parseInt(&quot;10&quot;, 2)); // 2
+</code></pre><h1 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h1><pre><code>var foo = {n: 1};
+var bar = foo;
+foo.x = foo = {n: 2};
+</code></pre><p>foo {n:2}<br>bar.x:{n:2}<br>foo.x:undefined<br>bar:<br>    {<br>    n:1<br>    x:{n:2}<br>    }</p>
+<pre><code>1,2行foo和bar都指向对象{n: 1}
+3行 foo.x = foo = {n: 2};
+相当于
+bar.x = foo = {n: 2};
+此时foo.x -&gt; bar.x
+执行后
+bar.x === {n: 2};
+foo === {n: 2};
+bar.x === foo;
+</code></pre></iframe></frameset></body></p>
       
     </div>
     
@@ -559,7 +643,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#页面的性能指标详解"><span class="nav-number">1.</span> <span class="nav-text">页面的性能指标详解</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#onload，DOMContentLoaded-以及DOM加载顺序"><span class="nav-number">2.</span> <span class="nav-text">onload，DOMContentLoaded,以及DOM加载顺序</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#页面的性能指标详解"><span class="nav-number">1.</span> <span class="nav-text">页面的性能指标详解</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#onload，DOMContentLoaded-以及DOM加载顺序"><span class="nav-number">2.</span> <span class="nav-text">onload，DOMContentLoaded,以及DOM加载顺序</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#js-隐式转换"><span class="nav-number">3.</span> <span class="nav-text">js 隐式转换</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#函数声明提前"><span class="nav-number">4.</span> <span class="nav-text">函数声明提前</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#this指向"><span class="nav-number">5.</span> <span class="nav-text">this指向</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#number"><span class="nav-number">6.</span> <span class="nav-text">number</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#map"><span class="nav-number">7.</span> <span class="nav-text">map</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#对象"><span class="nav-number">8.</span> <span class="nav-text">对象</span></a></li></ol></div>
             
 
           </div>
